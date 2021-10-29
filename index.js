@@ -1,8 +1,8 @@
 const inquirer = require("inquirer");
-const ind = require("./individual");
 const fs = require("fs");
-const writehtml = require('./writehtml');
-const Choice = require("inquirer/lib/objects/choice");
+const util = require('util');
+const writefile = util.promisify(fs.writeFile)
+const generate = require('./writehtml');
 var teamdata = [];
 
 //questions for the manager 
@@ -39,7 +39,7 @@ function managerquestions() {
         var manager = [];
         // name, id, email, office
         //push 5 data into manager item
-        manager.push("manager");
+        manager.push("1manager");
         manager.push(manageranswers.mname);
         manager.push(manageranswers.mid);
         manager.push(manageranswers.memail);
@@ -82,7 +82,7 @@ function managerquestions() {
                 //name, id , email, github
                 //5 data in engineer item
                 var engineer = [];
-                engineer.push("engineer");
+                engineer.push("2engineer");
                 engineer.push(engineeranswers.ename);
                 engineer.push(engineeranswers.eid);
                 engineer.push(engineeranswers.eemail);
@@ -121,7 +121,7 @@ function managerquestions() {
                  //name, id, email, school
                  // 5 data into intern item
                  var intern = [];
-                 intern.push("intern");
+                 intern.push("3intern");
                  intern.push(internanswers.iname);
                  intern.push(internanswers.iid);
                  intern.push(internanswers.iemail);
@@ -144,17 +144,18 @@ function managerquestions() {
       ])
   }
   // write files after question done
-  async function writefile(){
+  async function generatefile(){
     // wait till all question finish to generate
     const manageranswers = await managerquestions();
-
+    const writehtml = generate();
+    await writefile('test_index.html', writehtml);
     console.log('Write file success');
     }
 
 
     function init() {
         try {
-            writefile();
+            generatefile();
         }   catch(err) {
             console.log(err);
         }
