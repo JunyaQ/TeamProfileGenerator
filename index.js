@@ -6,7 +6,7 @@ const generate = require('./writehtml');
 var teamdata = [];
 
 //questions for the manager 
-function managerquestions() {
+const managerquestions=()=> {
     // name, id, email, office
     return inquirer.prompt([
     {
@@ -35,6 +35,7 @@ function managerquestions() {
         message:"please enter your office number: ",
 
     }])
+   
     .then (manageranswers => {
         var manager = [];
         // name, id, email, office
@@ -47,7 +48,8 @@ function managerquestions() {
 
         teamdata.push(manager); 
         console.log("test: "+manager); 
-       console.log(manageranswers);     
+       console.log(manageranswers);   
+       return manageranswers;  
     })
      
     }
@@ -55,7 +57,7 @@ function managerquestions() {
 
 
     //questions for the engineer
-    function engineerquestions(){
+    const engineerquestions=()=>{
         return inquirer.prompt([
            //name, id , email, github
            {
@@ -78,6 +80,7 @@ function managerquestions() {
                name:"egithub",
                message:"Please enter the engineer github name: "
            }])
+           
             .then(engineeranswers => {
                 //name, id , email, github
                 //5 data in engineer item
@@ -88,13 +91,14 @@ function managerquestions() {
                 engineer.push(engineeranswers.eemail);
                 engineer.push(engineeranswers.egithub);
 
-                teamdata.push(engineer);       
+                teamdata.push(engineer);  
+                return engineeranswers;     
             })
             }
 
 
             //questions for the interns 
-   function internquestions(){
+   const internquestions=()=>{
         return inquirer.prompt([
             //name, id, email, school
            {
@@ -117,6 +121,7 @@ function managerquestions() {
                name:"ischool",
                message:"Please enter the Intern shcool: ",
            }])
+           
              .then(internanswers => {
                  //name, id, email, school
                  // 5 data into intern item
@@ -127,40 +132,58 @@ function managerquestions() {
                  intern.push(internanswers.iemail);
                  intern.push(internanswers.ischool);
 
-                teamdata.push(intern);   
+                teamdata.push(intern);  
+                return internanswers;
              })
+
              }
 
 
-  function options(){
+  var options=[{
       // start to ask with the manager first and then the option of choose from the engineer and intern
-      return inquirer.prompt([
-          {
               type:"list",
               name:"position",
               message:"Please choose between the following option, exit option when finish the team editing",
               choices:['Engineer','Intern','exit'],
           }
-      ])
-  }
-  // write files after question done
-  async function generatefile(){
-    // wait till all question finish to generate
-    const manageranswers = await managerquestions();
-    const writehtml = generate();
-    await writefile('test_index.html', writehtml);
-    console.log('Write file success');
-    }
+      ]
+      const startquestions=()=>{
+        inquirer.prompt(options).then(optionanswers=>{
+            console.log("test: "+optionanswers.position);
 
-
-    function init() {
-        try {
-            generatefile();
-        }   catch(err) {
-            console.log(err);
+       // console.log("options: "+optionanswers.position);
+        if(optionanswers.position == "Engineer"){
+            console.log("engineer");
+            engineerquestions()
+            .then(startquestions)
+           // var engineeranswers = await engineerquestions();
+           // generatefile()
+            
+     
         }
+        else if(optionanswers.position == "Intern"){
+            console.log("intern");
+            internquestions()
+            .then(startquestions)
+            //var internanswers = await internquestions();
+            //generatefile();
+    
+        }
+        else{
+        const writehtml = generate(manageranswers,engineeranswers,internanswers);
+        fs.writefile('test_index.html', writehtml);
+        console.log('Write file success');
+        }
+     })
+
       }
-      
-      // Function call to initialize app
-      init();
+
+  managerquestions()
+     .then(options)
+     .then(manageranswers=>{
+         startquestions()
+       // optionanswers =  options();
+        
+    })
+ 
 
