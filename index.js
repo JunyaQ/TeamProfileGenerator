@@ -1,7 +1,5 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const util = require('util');
-const writefile = util.promisify(fs.writeFile)
 const generate = require('./writehtml');
 var teamdata = [];
 
@@ -47,8 +45,8 @@ const managerquestions=()=> {
         manager.push(manageranswers.mofficenum);
 
         teamdata.push(manager); 
-        console.log("test: "+manager); 
-       console.log(manageranswers);   
+       // console.log("test: "+manager); 
+       //console.log(manageranswers);   
        return manageranswers;  
     })
      
@@ -170,14 +168,21 @@ const managerquestions=()=> {
     
         }
         else{
-        const writehtml = generate(manageranswers,engineeranswers,internanswers);
-        fs.writefile('test_index.html', writehtml);
+            
+        const writehtml = generate(teamdata);
+        fs.writeFile('test_index.html', writehtml,err=>{
+            if(err){
+                console.log("write file error");
+            }
+        });
+        console.log("teamdata: "+teamdata);
         console.log('Write file success');
         }
      })
 
       }
-
+      
+    
   managerquestions()
      .then(options)
      .then(manageranswers=>{
