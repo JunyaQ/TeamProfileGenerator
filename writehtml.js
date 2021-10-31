@@ -1,5 +1,8 @@
+const adddata = require('./adddata');
+
 function writehtmlfile(teamdata) {
     console.log("writting!");
+    console.log("teamdata: "+teamdata[0]);
     return `
     <!DOCTYPE html>
     <html lang="en">
@@ -7,12 +10,13 @@ function writehtmlfile(teamdata) {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./mystyle.css">
+        <link rel="stylesheet" href="./style.css">
         <title>TEST DOCUMENT</title>
         <h1> My Team </h1>
         <br/>
         <!--the manager section-->
         <div id="manager" class="individual">
+    
         </div>
 
         <!--the engineer section-->
@@ -39,5 +43,10 @@ function writehtmlfile(teamdata) {
     </html>
     
     
-    `;}
+    `
+    
+;}
+
+   //${adddata.addmanager()}
     module.exports  = writehtmlfile;
+    
