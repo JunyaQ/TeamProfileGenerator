@@ -12,7 +12,6 @@
   "scripts": {
     "test": "jest"
   },
-
   "author": "",
   "license": "ISC"
 }
