@@ -1,6 +1,12 @@
 *{
     font-family: 'Courier New', Courier, monospace;
 }
+.data{
+    display: flex;
+    margin-right: 20%;
+    margin-left: 20%;
+
+}
 .position{
     background-color: cornflowerblue;
     color: white;
@@ -18,6 +24,10 @@
     width: 300px;
     margin: 0;
     padding-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top:10px;
+    margin-bottom: 10px;
 }
 .id, .email, .office, .github, .school{
     background-color: white;

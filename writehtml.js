@@ -30,8 +30,11 @@ function writehtmlfile(teamdata) {
         <link rel="stylesheet" href="./style.css">
         <title>TEST DOCUMENT</title>
         <h1> My Team </h1>
-        <br/>
-        <!--the manager section-->
+
+    </head>
+    <body>
+    <div class="data">
+    <!--the manager section-->
         <div id="manager" class="individual">
         ${addm}
     
@@ -46,10 +49,7 @@ function writehtmlfile(teamdata) {
         <div id="intern" class="individual">
         ${addi}
         </div>
-
-
-    </head>
-    <body>
+        </div>
     <script src="./adddata.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     </body>
