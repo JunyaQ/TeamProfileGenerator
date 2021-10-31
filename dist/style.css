@@ -1,0 +1,55 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
+.data{
+    display:grid;
+    margin-left: 20px;
+    grid-template-columns: auto auto auto;
+
+}
+.position{
+    background-color: cornflowerblue;
+    color: white;
+    margin-top: 0 ;
+    border-top: 30px;
+    border-bottom: 30px;
+    border-right: 20px;
+    border-left: 20px;
+    width: 300px;
+}
+.one{
+    border-style: solid;
+    border-color: dimgrey;
+    background-color: gainsboro;
+    width: 300px;
+    padding-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+.id, .email, .office, .github, .school{
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0;
+    border-style: solid;
+    border-width: 1px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-color: dimgrey;
+
+}
+
+h1{
+    background-color: #4441fa;
+    color: white;
+    justify-content: center;
+    text-align: center;
+}
+
+footer{
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 10px;
+}
