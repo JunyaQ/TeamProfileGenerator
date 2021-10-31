@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generate = require('./writehtml');
+const generate = require('./src/writehtml');
 var teamdata = [];
 
 //questions for the manager 
@@ -270,7 +270,7 @@ var options=[{
     else{
         
     const writehtml = generate(teamdata);
-    fs.writeFile('test_index.html', writehtml,err=>{
+    fs.writeFile('./dist/test_index.html', writehtml,err=>{
         if(err){
             console.log("write file error");
         }
