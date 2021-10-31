@@ -3,18 +3,21 @@
 function writehtmlfile(teamdata) {
     console.log("writting!");
     console.log("teamdata: "+teamdata[0]);
+    var addm ='';
+    var adde ='';
+    var addi= '';
   //  adddata.fetcharray(teamdata);
   /**based on the array, first element in each array showing their position based on index.js, so will categorize each based on that */
   for(var i=0; i<teamdata.length;i++){
     if(teamdata[i][0]=="1manager"){
         // will save the return from each method as an variable, and can be added to the html output
-       var addm= addmanager(teamdata[i]);
+       addm=addm+ addmanager(teamdata[i]);
     }
     else if(teamdata[i][0]=="2engineer"){
-       var adde= addengineer(teamdata[i]);
+       adde= adde+ addengineer(teamdata[i]);
     }
     else if(teamdata[i][0]=="3intern"){
-      var addi=  addintern(teamdata[i]);
+       addi= addi+ addintern(teamdata[i]);
     }
 }
     return `
@@ -84,6 +87,7 @@ function fetcharray(teamdata){
 */
 function addmanager(arr){
     console.log("ADD MANAGER IS WRITING");
+    if(arr!=''){
     
 return`
 <div class="one">
@@ -95,9 +99,11 @@ return`
 </div>
 
 `
+    }
 }
 function addengineer(arr){
     console.log("ADD ENGINEER IS WRITING");
+    if(arr!=''){
     return`
     <div class="one">
 <h2 class = position>${arr[1]} <br/>
@@ -109,10 +115,12 @@ function addengineer(arr){
 
     
     `
+    }
 
 }
 function addintern(arr){
     console.log("ADD INTERN IS WRITING");
+    if(arr!=''){
     return`
     <div class="one">
 <h2 class = position>${arr[1]} <br/>
@@ -123,8 +131,8 @@ function addintern(arr){
 </div>
 
     `
+    }
 }
-
 
    //${adddata.addmanager()}
     module.exports  = writehtmlfile;
