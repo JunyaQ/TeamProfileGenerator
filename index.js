@@ -11,6 +11,14 @@ const managerquestions=()=> {
         type:"input",
         name:"mname",
         message:"please enter the team manager name: ",
+        validate: mnameInput => {
+            if (mnameInput) {
+              return true;
+            } else {
+              console.log('please enter the team manager name:');
+              return false;
+            }
+          }
 
 
     },
@@ -18,6 +26,15 @@ const managerquestions=()=> {
         type:"input",
         name:"mid",
         message:"Please enter the team manager id: ",
+        validate: midInput =>{
+            if(Number(midInput)!==NaN){
+                return true;
+
+            }
+            else{
+                console.log("Please enter a valid team manager id: ")
+            }
+        }
 
     },
     {
@@ -38,6 +55,7 @@ const managerquestions=()=> {
         var manager = [];
         // name, id, email, office
         //push 5 data into manager item
+        console.log(Number(manageranswers.mid));
         manager.push("1manager");
         manager.push(manageranswers.mname);
         manager.push(manageranswers.mid);
@@ -51,8 +69,6 @@ const managerquestions=()=> {
     })
      
     }
-
-
 
     //questions for the engineer
     const engineerquestions=()=>{

@@ -61,11 +61,9 @@ function writehtmlfile(teamdata) {
             </p>
         </section>
         </footer>
-    </html>
-    
+    </html> 
     
     `
-    
 ;}
 
 /*
@@ -82,13 +80,12 @@ function fetcharray(teamdata){
         }
 
     }
-
 }
 */
 function addmanager(arr){
-    console.log("ADD MANAGER IS WRITING");
+    //console.log("ADD MANAGER IS WRITING");
+    // if not undefine generate the html
     if(arr!=''){
-    
 return`
 <div class="one">
 <h2 class = position>${arr[1]} <br/>
@@ -102,7 +99,8 @@ return`
     }
 }
 function addengineer(arr){
-    console.log("ADD ENGINEER IS WRITING");
+    //console.log("ADD ENGINEER IS WRITING");
+    // if not undefine generate the html
     if(arr!=''){
     return`
     <div class="one">
@@ -119,7 +117,8 @@ function addengineer(arr){
 
 }
 function addintern(arr){
-    console.log("ADD INTERN IS WRITING");
+    //console.log("ADD INTERN IS WRITING");
+    // if not undefine generate the html
     if(arr!=''){
     return`
     <div class="one">
