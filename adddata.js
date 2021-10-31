@@ -15,7 +15,10 @@ function fetcharray(teamdata){
 }
 function addmanager(arr){
     console.log("ADD MANAGER IS WRITING");
-    //document.getElementById
+    
+return`
+
+`
 
 }
 function addengineer(arr){
