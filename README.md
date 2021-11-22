@@ -42,10 +42,10 @@ THEN the application will start to generate test_index.html<br/>
 
 ## Test
 The gif showing the result of the test and how to run the test<br/>
-![RUN TEST GIF](img/runTestgif.gif)<br/>
+[RUN TEST](https://drive.google.com/file/d/11wVi8bPus1leRHWzsJrNuAq2arFmJ58A/view?usp=sharing)<br/>
 
 ## How to use the command line application 
 The gif showing how to run the application and a sample of what type of input you should put for each question<br/>
-![RUN APPLICATION GIF](img/runProgramgif.gif)<br/>
+[RUN APPLICATION](https://drive.google.com/file/d/1JkBsqG-QwPY8PKgzZq2x3Sg4FCOT0EXV/view?usp=sharing)<br/>
 AFTER answer all the command line question, the html form is generated
 ![IMG OF HTML RESULT](img/webpage.png)<br/>
