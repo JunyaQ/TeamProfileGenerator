@@ -91,7 +91,7 @@ return`
 <h2 class = position>${arr[1]} <br/>
     Manager</h2>
 <p class="id">ID: ${arr[2]}</p>
-<p class="email">Email: ${arr[3]}</p>
+<p class="email"><a href="mailto:${arr[3]}">Email: ${arr[3]}</a></p>
 <p class="office">Office number: ${arr[4]}</p>
 </div>
 
@@ -110,8 +110,8 @@ function addengineer(arr){
 <h2 class = position>${arr[1]} <br/>
     Engineer</h2>
 <p class="id">ID: ${arr[2]}</p>
-<p class="email">Email: ${arr[3]}</p>
-<p class="github">GitHub: ${arr[4]}</p>
+<p class="email"><a href="mailto:${arr[3]}">Email: ${arr[3]}</a></p>
+<p class="github"><a href="https://github.com/${arr[4]}">GitHub: ${arr[4]}</p>
 </div>
 
     
@@ -131,7 +131,7 @@ function addintern(arr){
 <h2 class = position>${arr[1]} <br/>
     Intern</h2>
 <p class="id">ID: ${arr[2]}</p>
-<p class="email">Email: ${arr[3]}</p>
+<p class="email"><a href="mailto:${arr[3]}">Email: ${arr[3]}</a></p>
 <p class="school">School: ${arr[4]}</p>
 </div>
 

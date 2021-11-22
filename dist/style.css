@@ -4,7 +4,7 @@
 .data{
     display:grid;
     margin-left: 20px;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto auto;
 
 }
 .position{
