@@ -1,4 +1,4 @@
-# Bootcamp_challenge-10_TeamProfileGenerator
+# TeamProfileGenerator
 
 ## How to run the application
 WHEN run the test code<br/>
