@@ -1,4 +1,6 @@
 # TeamProfileGenerator
+## Team profile Generator 
+THis is a command line applkication that will generate a webpage based on input. The information may contain clickable link to other webpages. 
 
 ## How to run the application
 WHEN run the test code<br/>
@@ -6,7 +8,7 @@ THEN use command: npm run test<br/>
 WHEN run the application<br/>
 THEN use command: node index.js<br/>
 
-## Information about the application:
+## About the application:
 This is a command line application that will generate a html page based on input<br/>
 WHEN start the application<br/>
 THEN questions will show on commandline<br/>
@@ -40,6 +42,13 @@ THEN the application will check the following: <br/>
 WHEN choose exit<br/>
 THEN the application will start to generate test_index.html<br/>
 
+## Technologies use
+- Command line
+- HTML
+- CSS
+- Javascript
+- Jest for testing
+
 ## Test
 The gif showing the result of the test and how to run the test<br/>
 [RUN TEST](https://drive.google.com/file/d/11wVi8bPus1leRHWzsJrNuAq2arFmJ58A/view?usp=sharing)<br/>
@@ -48,4 +57,4 @@ The gif showing the result of the test and how to run the test<br/>
 The gif showing how to run the application and a sample of what type of input you should put for each question<br/>
 [RUN APPLICATION](https://drive.google.com/file/d/1JkBsqG-QwPY8PKgzZq2x3Sg4FCOT0EXV/view?usp=sharing)<br/>
 AFTER answer all the command line question, the html form is generated
-![IMG OF HTML RESULT](img/webpage.png)<br/>
+![IMG OF HTML RESULT](https://github.com/JunyaQ/TeamProfileGenerator/blob/main/img/webpage.png)<br/>
